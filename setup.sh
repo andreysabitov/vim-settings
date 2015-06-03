@@ -8,4 +8,4 @@ cd ../
 rm -Rf fonts
 cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
 cd ~/.vim/bundle && git clone git://github.com/klen/python-mode.git
-rm -Rf ~/.git
+cd ~/.vim/bundle && git clone https://github.com/scrooloose/nerdtree.git
