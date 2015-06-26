@@ -54,8 +54,9 @@ set textwidth=79
 set formatoptions=qrn1
 "set colorcolumn=85
 
-set list
-set listchars=tab:▸\ ,eol:¬
+"set list
+"set listchars=tab:▸\ ,eol:¬
+set listchars=tab:\|\ ,eol:¬
 au FocusLost * :wa
 
 hi CursorLine term=bold cterm=bold guibg=Grey80
@@ -68,9 +69,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-nnoremap <silent> <Leader>c :set cursorcolumn! cursorline!<CR>
-nnoremap <silent> <Leader>l :exe "let m=matchadd('WildMenu','\\%" . line('.') . "l')"<CR>
-nnoremap <silent> <Leader>w :exe "let m=matchadd('WildMenu','\\<\\w*\\%" . line(".") . "l\\%" . col(".") . "c\\w*\\>')"<CR>
+nnoremap <silent> <Leader>cl :set cursorcolumn! cursorline!<CR>
+nnoremap <silent> <Leader>li :exe "let m=matchadd('WildMenu','\\%" . line('.') . "l')"<CR>
+nnoremap <silent> <Leader>wo :exe "let m=matchadd('WildMenu','\\<\\w*\\%" . line(".") . "l\\%" . col(".") . "c\\w*\\>')"<CR>
 nnoremap <silent> <Leader><CR> :call clearmatches()<CR>
 
 
@@ -98,3 +99,21 @@ call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
 call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>co <Plug>(go-coverage)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <Leader>f <Plug>(go-fmt)
+
+
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
+
+let g:go_fmt_fail_silently = 1
